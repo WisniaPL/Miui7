@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string name="prompt_input_time_illegal">"Can't set this time, change it and try again"</string>
+     <string name="summary_cloud_space_almost_full">Get more storage space</string>
+     <string name="summary_cloud_space_full">Get more storage space and access to more features</string>
+     <string name="summary_live_talk_purchase">Just ¥ 0.05 per minute for domestic calls.</string>
+     <string name="title_cloud_space_almost_full">Cloud storage nearly full, items may not sync</string>
+     <string name="title_cloud_space_full">"Cloud storage full, can't sync photos"</string>
+     <string name="title_cmcc_app_check">"Verification isn't complete"</string>
+     <string name="title_live_talk_purchase">Top up now</string>
+     <string name="title_telecom_operator">"Use carrier's accounting"</string>
+</resources>

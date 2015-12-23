@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string-array name="color_mode_labels">
+        <item>Czarno-białe</item>
+        <item>Kolor</item>
+     </string-array>
+     <string-array name="duplex_mode_labels">
+        <item>Brak</item>
+        <item>Długa krawędź</item>
+        <item>Krótka krawędź</item>
+     </string-array>
+     <string-array name="orientation_labels">
+        <item>Pionowa</item>
+        <item>Pozioma</item>
+     </string-array>
+     <string-array name="page_options_labels">
+        <item>All</item>
+        <item>Range</item>
+     </string-array>
+</resources>

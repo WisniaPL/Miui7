@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string-array name="captioning_color_selector_titles">
+        <item>@string/color_white</item>
+        <item>@string/color_black</item>
+        <item>@string/color_red</item>
+        <item>@string/color_yellow</item>
+        <item>@string/color_green</item>
+        <item>@string/color_cyan</item>
+        <item>@string/color_blue</item>
+        <item>@string/color_magenta</item>
+     </string-array>
+     <string-array name="captioning_opacity_selector_titles">
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>100%</item>
+     </string-array>
+     <string-array name="common_password_business_clickable_default">
+        <item>true</item>
+        <item>true</item>
+        <item>false</item>
+     </string-array>
+     <string-array name="date_format_values">
+        <item></item>
+        <item>MM-dd-yyyy</item>
+        <item>dd-MM-yyyy</item>
+        <item>yyyy-MM-dd</item>
+     </string-array>
+     <string-array name="default_install_location_entries">
+        <item>Let the system decide</item>
+        <item>Internal memory (/data)</item>
+        <item>External storage (/sdcard)</item>
+     </string-array>
+     <string-array name="default_install_location_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+     </string-array>
+     <string-array name="dndm_auto_time_trun_on_off">
+        <item>@string/dndm_auto_time_turn_on</item>
+        <item>@string/dndm_auto_time_turn_off</item>
+     </string-array>
+     <string-array name="dndm_vip_list_group_array">
+        <item>@string/dndm_vip_list_custom</item>
+        <item>@string/dndm_vip_list_contact</item>
+     </string-array>
+     <string-array name="dolby_bassboost_ranks">
+        <item>@string/dolby_bassboost_low</item>
+        <item>@string/dolby_bassboost_normal</item>
+        <item>@string/dolby_bassboost_high</item>
+     </string-array>
+     <string-array name="dolby_mode_entries">
+        <item>@string/dolby_mode_off</item>
+        <item>@string/dolby_mode_music</item>
+        <item>@string/dolby_mode_movie</item>
+     </string-array>
+     <string-array name="dolby_roomsize_ranks">
+        <item>@string/dolby_roomsize_low</item>
+        <item>@string/dolby_roomsize_normal</item>
+        <item>@string/dolby_roomsize_high</item>
+     </string-array>
+     <string-array name="font_size_title">
+        <item>@string/layout_size_small</item>
+        <item>@string/layout_size_normal</item>
+        <item>@string/layout_size_medium</item>
+        <item>@string/layout_size_large</item>
+        <item>@string/layout_size_huge</item>
+        <item>@string/layout_size_exhuge</item>
+     </string-array>
+     <string-array name="led_color_values">
+        <item>blue</item>
+        <item>red</item>
+        <item>green</item>
+     </string-array>
+     <string-array name="primary_storage_entries">
+        <item>1-Internal storage, 2-SD card</item>
+        <item>1- SD card, 2-Internal storage</item>
+        <item>Only Internal storage</item>
+        <item>Only SD card</item>
+     </string-array>
+     <string-array name="primary_storage_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+     </string-array>
+     <string-array name="tts_rate_values">
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>350</item>
+        <item>400</item>
+     </string-array>
+     <string-array name="tts_rate_xunfei_entries">
+        <item>Very slow</item>
+        <item>Slow</item>
+        <item>Normal</item>
+        <item>Fast</item>
+        <item>Faster</item>
+     </string-array>
+     <string-array name="vpn_types">
+        <item>PPTP</item>
+        <item>L2TP/IPSec PSK</item>
+        <item>L2TP/IPSec RSA</item>
+        <item>IPSec Xauth PSK</item>
+        <item>IPSec Xauth RSA</item>
+        <item>IPSec Hybrid RSA</item>
+     </string-array>
+     <string-array name="wifi_ap_security">
+        <item>@string/wifi_security_none</item>
+        <item>@string/wifi_security_wpa</item>
+        <item>@string/wifi_security_wpa2</item>
+     </string-array>
+     <string-array name="wifi_eap_method_add_sim">
+        <item>PEAP</item>
+        <item>TLS</item>
+        <item>TTLS</item>
+        <item>PWD</item>
+        <item>SIM</item>
+        <item>AKA</item>
+     </string-array>
+     <string-array name="wifi_eap_method_add_sim_for_cmcc">
+        <item>PEAP</item>
+        <item>SIM</item>
+     </string-array>
+     <string-array name="wifi_security">
+        <item>@string/wifi_security_none</item>
+        <item>@string/wifi_security_wep</item>
+        <item>@string/wifi_security_psk_generic</item>
+        <item>@string/wifi_security_eap</item>
+     </string-array>
+     <string-array name="wifi_security_no_eap">
+        <item>@string/wifi_security_none</item>
+        <item>@string/wifi_security_wep</item>
+        <item>@string/wifi_security_psk_generic</item>
+        <item>WAPI PSK</item>
+        <item>WAPI CERT</item>
+     </string-array>
+     <string-array name="wifi_security_only_wapi_cert_entries">
+        <item>WAPI CERT</item>
+     </string-array>
+     <string-array name="wifi_wapi_key_type">
+        <item>WAPI ASCII</item>
+        <item>WAPI hexadecimal</item>
+     </string-array>
+</resources>

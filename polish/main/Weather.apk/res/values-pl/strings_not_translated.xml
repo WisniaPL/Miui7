@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string name="aqi_quality_index_break_short_desc">%1$s</string>
+     <string name="aqi_quality_index_dangerous_short_desc">%1$s</string>
+     <string name="aqi_quality_index_good_short_desc">%1$s</string>
+     <string name="aqi_quality_index_hazardous_short_desc">%1$s</string>
+     <string name="aqi_quality_index_light_pollution_short_desc">%1$s</string>
+     <string name="aqi_quality_index_moderate_short_desc">%1$s</string>
+     <string name="aqi_quality_index_pure_short_desc">%1$s</string>
+     <string name="aqi_quality_index_unhealthy_short_desc">%1$s</string>
+     <string name="aqi_short_desc">"AQI "</string>
+</resources>

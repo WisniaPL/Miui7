@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string name="accessibility_audio_shutter_bg">Audio Shutter background</string>
+     <string name="accessibility_camera_module_picker">CameraModulePicker</string>
+     <string name="accessibility_countdown">Count Down button</string>
+     <string name="accessibility_peak">Focus Peak button</string>
+     <string name="pref_camera_snap_value_off">Off</string>
+     <string name="pref_camera_snap_value_take_movie">Movie</string>
+     <string name="pref_camera_snap_value_take_picture">Picture</string>
+</resources>

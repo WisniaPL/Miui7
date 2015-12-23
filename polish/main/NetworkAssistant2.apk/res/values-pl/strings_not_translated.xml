@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string name="datausage_purchase_none_history">Empty</string>
+     <string name="datausage_purchase_order_failure">Purchase failed</string>
+     <string name="datausage_purchase_order_failure_cause">Purchase failed…</string>
+     <string name="datausage_purchase_order_history">History</string>
+     <string name="datausage_purchase_time_in">" on "</string>
+     <string name="dialog_title_attention">Attention</string>
+     <string name="lock_screen_traffic_purchase_textview">Buy mobile data</string>
+     <string name="package_change_notification_summary">Tap to learn more.</string>
+     <string name="package_change_notification_title">Adjust data limit automatically</string>
+     <string name="package_setted_error_notification_summary">Tap to view data usage details.</string>
+     <string name="package_setted_error_notification_titile">"Couldn't set data plan"</string>
+     <string name="pref_key_new_installed_app_firewall_mobile">pref_key_new_installed_app_firewall_mobile</string>
+     <string name="pref_key_new_installed_app_firewall_wifi">pref_key_new_installed_app_firewall_wifi</string>
+     <string name="search_input_txt">"&lt;font color='#ff0000'>%s&lt;/font>"</string>
+     <string name="tc_sms_report_direction">SMS inquiry code</string>
+     <string name="tc_sms_report_do_report">Send</string>
+     <string name="tc_sms_report_get_default">"You won't incur charges for SMS messages used to get your data usage balance from your carrier."</string>
+     <string name="tc_sms_report_get_sms">Get SMS</string>
+     <string name="tc_sms_report_get_sms2">Get SMS</string>
+     <string name="tc_sms_report_get_sms_again">Refresh SMS</string>
+     <string name="tc_sms_report_get_sms_failure">"Couldn't get data usage SMS format"</string>
+     <string name="tc_sms_report_get_sms_successs">Data usage SMS format updated</string>
+     <string name="tc_sms_report_get_sms_timeout">Request timed out</string>
+     <string name="tc_sms_report_get_success">"Received data usage report SMS from carrier. Make sure it's accurate and submit it to us."</string>
+     <string name="tc_sms_report_get_success_notify_body">Make sure the report is accurate and submit it to MIUI.</string>
+     <string name="tc_sms_report_get_success_notify_title">Received data usage report SMS</string>
+     <string name="tc_sms_report_geting_sms">Getting SMS info…</string>
+     <string name="tc_sms_report_notify_correction_body">Go to the Data usage app in Security Center and try again manually.</string>
+     <string name="tc_sms_report_notify_correction_failure_title">"Can't update data usage info"</string>
+     <string name="tc_sms_report_notify_get_failure_body">"Couldn't submit data usage report. Make sure that you're connected to a Mobile network."</string>
+     <string name="tc_sms_report_notify_get_failure_title">"Can't get data usage SMS"</string>
+     <string name="tc_sms_report_notify_get_timeout_body">Process timed out. Confirm with your carrier that the SMS enquiry code you entered is correct.</string>
+     <string name="tc_sms_report_notify_get_timeout_title">"Can't get data usage SMS"</string>
+     <string name="tc_sms_report_receive_content">Data usage report SMS contents (Confirm data usage stats)</string>
+     <string name="tc_sms_report_receive_content_null">"​Help improve this feature!&lt;br/>Here's how:&lt;br/>1. Go to \"Check command SMS\" and \"Recipient number\"&lt;br/>2. Tap \"Get SMS template\"&lt;br/>3. Wait to receive SMS message from your carrier &lt;br/>4. Tap \"Upload to MIUI\"​"</string>
+     <string name="tc_sms_report_receive_num">Recipient number</string>
+     <string name="tc_sms_report_send_num">Carrier phone #</string>
+     <string name="tc_sms_report_summary">Help us improve this feature by sending a report when your data usage info is incorrect or fails to update</string>
+     <string name="tc_sms_report_tips_dialog_message">"Data usage uses a specially formatted SMS to get your latest data usage from your carrier. If this feature isn't working normally, try updating the data usage SMS format. The new updated format will then be uploaded to our servers."</string>
+     <string name="tc_sms_report_tips_dialog_title">Data usage SMS</string>
+     <string name="tc_sms_report_title">Report data usage bug</string>
+     <string name="tc_sms_report_toast_text">Getting info…</string>
+     <string name="tc_sms_report_upload_success">"Data usage report SMS submitted. We'll get right on it!"</string>
+     <string name="tc_sms_report_upload_when_net">Thank you for the feedback!</string>
+     <string name="traffic_alert_auto_modify_notification_sumarry">Monthly plan changed to %s.</string>
+     <string name="traffic_alert_auto_modify_notification_titile">Updated data plan</string>
+     <string name="traffic_alert_auto_modify_package_summary">"Automatically adjust data package according to the carrier's info"</string>
+     <string name="traffic_config_alert_auto_modify">Update data plan automatically</string>
+     <string name="traffic_config_alert_body_extra">"You bought %1$s of additional data this month. This is different from the %2$s you added manually."</string>
+     <string name="traffic_config_alert_body_extra_notset">"You bought %s of additional data this month. This isn't reflected in the monthly data limit you set manually."</string>
+     <string name="traffic_config_alert_package">"Rolled over extra data"</string>
+     <string name="traffic_limit_error_alert_body">Your remaining data for this month (%1$s) is bigger than your monthly plan (%2$s). Mark extra data as top-up package?</string>
+     <string name="traffic_limit_error_alert_package">"Remaining data includes data that has been rolled over from the previous month."</string>
+     <string name="traffic_limit_error_alert_title">Data limit reminder %s</string>
+     <string name="traffic_over_purchase_body">Touch to view details.</string>
+     <string name="traffic_over_purchase_link">"You've reached your mobile plan's data usage limit.&lt;br/>If you go over your plans data usage limit, your carrier may charge you additional fees.&lt;br/>&lt;br/>&lt;font color='#ccffffff'>&lt;U>Tap to top up your balance.&lt;/U>&lt;/font>"</string>
+     <string name="traffic_over_purchase_title">Data limit exceeded</string>
+     <string name="traffic_setting_fragment_area_dual">%s Locale</string>
+</resources>

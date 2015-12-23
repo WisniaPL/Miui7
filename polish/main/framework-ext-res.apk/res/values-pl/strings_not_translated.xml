@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string name="all_call_livetalk_enable">Using top-up package for domestic and international calls</string>
+     <string name="all_call_livetalk_remain_mins">Minutes remaining: %1$s domestic or %2$s international</string>
+     <string name="default_name">Default</string>
+     <string name="enable_livetalk_summary">Save 70% on your calling charges</string>
+     <string name="enable_livetalk_title">Turn on Top-up package</string>
+     <string name="internal_livetalk_enable">Using top-up package for domestic calls</string>
+     <string name="international_livetalk_enable">Using top-up package for international calls</string>
+     <string name="livetalk_not_enable">Top-up package off</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parsed by jbart3h -->
+<resources>
+     <string name="app_label">Pamięć zewnętrzna</string>
+     <string name="default_input_method">com.mediatek.ime/.MtkIME</string>
+</resources>
