@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Parsed by jbart3h -->
-<resources>
-     <string name="transcoding_clip_format">/</string>
-     <string name="transcoding_progress_format">%</string>
-     <string name="video_file_name_format">_yyyyMMdd_HHmmss</string>
-</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Parsed by jbart3h -->
-<resources>
-     <string name="im">IM</string>
-     <string name="info_antispam_current_mode">%s</string>
-     <string name="sip_phone">SIP Phone</string>
-     <string name="website">Website</string>
-</resources>

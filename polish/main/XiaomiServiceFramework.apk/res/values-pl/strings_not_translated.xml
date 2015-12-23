@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Parsed by jbart3h -->
-<resources>
-     <string name="activate_feature_live_talk">Phone Top-up package</string>
-     <string name="activate_popup_title_error_device_id">Invalid IMEI</string>
-     <string name="activate_status_desc_device_id_error">Invalid IMEI</string>
-</resources>
