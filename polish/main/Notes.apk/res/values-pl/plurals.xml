@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<resources>
+  <plurals name="note_count_in_folder">
+    <item quantity="other">%1$s notatek</item>
+    <item quantity="one">1 notatka</item>
+  </plurals>
+  <plurals name="search_results_title">
+    <item quantity="other">%1$s wyniki dla \"%2$s\"</item>
+    <item quantity="one">%1$s wynik dla \"%2$s\"</item>
+  </plurals>
+  <plurals name="note_terms">
+    <item quantity="other">%1$s notatki</item>
+    <item quantity="one">%1$s notatka</item>
+  </plurals>
+  <plurals name="folder_terms">
+    <item quantity="other">%1$s foldery</item>
+    <item quantity="one">%1$s folder</item>
+  </plurals>
+</resources>

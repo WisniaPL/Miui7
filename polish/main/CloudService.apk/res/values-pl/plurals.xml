@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<resources>
+  <plurals name="dirty_contacts_count">
+    <item quantity="other">%d kontakty</item>
+    <item quantity="one">%d kontakt</item>
+  </plurals>
+  <plurals name="dirty_mms_count">
+    <item quantity="other">%d wiadomości</item>
+    <item quantity="one">%d wiadomość</item>
+  </plurals>
+  <plurals name="dirty_note_count">
+    <item quantity="other">%d notatki</item>
+    <item quantity="one">%d notatka</item>
+  </plurals>
+  <plurals name="dirty_image_count">
+    <item quantity="other">%d zdjęcia</item>
+    <item quantity="one">%d zdjęcie</item>
+  </plurals>
+</resources>

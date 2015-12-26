@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<resources>
+  <plurals name="abbrev_less_than_one_minute_ago">
+    <item quantity="other">Właśnie teraz</item>
+  </plurals>
+  <plurals name="less_than_one_minute_ago">
+    <item quantity="other">Właśnie teraz</item>
+  </plurals>
+  <plurals name="abbrev_in_less_than_one_minute">
+    <item quantity="other">Natychmiast</item>
+  </plurals>
+  <plurals name="in_less_than_one_minute">
+    <item quantity="other">Natychmiast</item>
+  </plurals>
+  <plurals name="abbrev_a_hour_ago">
+    <item quantity="other">1 godzinę temu</item>
+  </plurals>
+  <plurals name="abbrev_half_hour_ago">
+    <item quantity="other">Pół godziny temu</item>
+  </plurals>
+  <plurals name="a_hour_ago">
+    <item quantity="other">1 godzinę temu</item>
+  </plurals>
+  <plurals name="half_hour_ago">
+    <item quantity="other">Pół godziny temu</item>
+  </plurals>
+  <plurals name="abbrev_in_a_hour">
+    <item quantity="other">W 1 godzinę</item>
+  </plurals>
+  <plurals name="abbrev_in_half_hour">
+    <item quantity="other">W pół godziny</item>
+  </plurals>
+  <plurals name="in_a_hour">
+    <item quantity="other">W 1 godzinę</item>
+  </plurals>
+  <plurals name="in_half_hour">
+    <item quantity="other">W pół godziny</item>
+  </plurals>
+  <plurals name="abbrev_num_minutes_ago">
+    <item quantity="other">%d minuty temu</item>
+    <item quantity="one">1 minutę temu</item>
+  </plurals>
+  <plurals name="num_minutes_ago">
+    <item quantity="other">%d minuty temu</item>
+    <item quantity="one">1 minutę temu</item>
+  </plurals>
+  <plurals name="abbrev_in_num_minutes">
+    <item quantity="other">w %d minuty</item>
+    <item quantity="one">w 1 minutę</item>
+  </plurals>
+  <plurals name="in_num_minutes">
+    <item quantity="other">w %d minuty</item>
+    <item quantity="one">w 1 minutę</item>
+  </plurals>
+  <plurals name="items_selected">
+    <item quantity="other">%d elementów wybranych</item>
+    <item quantity="one">%d element wybrany</item>
+  </plurals>
+</resources>

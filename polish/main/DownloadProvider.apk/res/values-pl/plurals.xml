@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<resources>
+  <plurals name="notif_summary_active">
+    <item quantity="other">%d pliki pobierane</item>
+    <item quantity="one">1 plik pobierany</item>
+  </plurals>
+  <plurals name="notif_summary_waiting">
+    <item quantity="other">%d pliki oczekują</item>
+    <item quantity="one">1 plik oczekuje</item>
+  </plurals>
+</resources>

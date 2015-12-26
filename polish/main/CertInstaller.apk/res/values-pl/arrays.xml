@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<resources>
+  <string-array name="credential_usage">
+    <item>VPN i aplikacje</item>
+    <item>WiFi</item>
+  </string-array>
+</resources>

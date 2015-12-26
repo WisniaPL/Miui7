@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<resources>
+  <integer-array name="video_measure">
+    <item>280</item>
+    <item>210</item>
+  </integer-array>
+  <integer-array name="video_transcode_target">
+    <item>536</item>
+    <item>480</item>
+  </integer-array>
+</resources>

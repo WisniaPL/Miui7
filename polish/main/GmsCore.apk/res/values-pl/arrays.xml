@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<resources>
+  <string-array name="games_leaderboard_timespan_titles">
+    <item>@string/games_leaderboard_timespan_menu_daily</item>
+    <item>@string/games_leaderboard_timespan_menu_weekly</item>
+    <item>@string/games_leaderboard_timespan_menu_alltime</item>
+  </string-array>
+  <array name="games_leaderboard_timespan_icons">
+    <item>@drawable/ic_time_span_today_holo_light</item>
+    <item>@drawable/ic_time_span_this_week_holo_light</item>
+    <item>@drawable/ic_time_span_all_time_holo_light</item>
+  </array>
+  <array name="auth_gls_passwordStrengthColor">
+    <item>#ffff0000</item>
+    <item>#ffffec18</item>
+    <item>#ff6699ff</item>
+    <item>#ff99cc00</item>
+  </array>
+  <string-array name="auth_gls_passwordStrength">
+    <item>słabe</item>
+    <item>dopuszczalne</item>
+    <item>dobre</item>
+    <item>silne</item>
+  </string-array>
+</resources>
