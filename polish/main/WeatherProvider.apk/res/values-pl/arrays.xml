@@ -1,49 +1,49 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string-array name="weather_type">
-    <item>Sunny</item>
-    <item>Cloudy</item>
-    <item>Overcast</item>
-    <item>Foggy</item>
-    <item>Heavy rainstorm</item>
-    <item>Downpour</item>
-    <item>Rainstorm</item>
-    <item>Thunderstorm</item>
-    <item>Shower</item>
-    <item>Heavy rainfall</item>
-    <item>Moderate rain</item>
-    <item>Light rain</item>
-    <item>Rain and snow mixed</item>
-    <item>Blizzard</item>
-    <item>Snow</item>
-    <item>Heavy snow</item>
-    <item>Moderate snow</item>
-    <item>Light snow</item>
-    <item>Strong sandstorm</item>
-    <item>Sand storm</item>
-    <item>Sand</item>
-    <item>Windy</item>
-    <item>Hail</item>
-    <item>Dust</item>
-    <item>Haze</item>
-    <item>Freezing rain</item>
-    <item>No data</item>
-  </string-array>
-  <string-array name="weather_indexes_uv_level">
-    <item>Weakest</item>
-    <item>Weak</item>
-    <item>Mid-range</item>
-    <item>Strong</item>
-    <item>Strongest</item>
-  </string-array>
-  <string-array name="wind_direction">
-    <item>Wind N</item>
-    <item>Wind NE</item>
-    <item>Wind E</item>
-    <item>Wind SE</item>
-    <item>Wind S</item>
-    <item>Wind SW</item>
-    <item>Wind W</item>
-    <item>Wind NW</item>
-  </string-array>
+    <string-array name="weather_type">
+        <item>Bezchmurnie</item>
+        <item>Pochmurnie</item>
+        <item>Pochmurnie</item>
+        <item>Mglisto</item>
+        <item>Ulewne deszcze</item>
+        <item>Ulewa</item>
+        <item>Ulewa</item>
+        <item>Burze</item>
+        <item>Deszczowo</item>
+        <item>Duże opady</item>
+        <item>Deszczowo</item>
+        <item>Przelotne opady</item>
+        <item>Deszcz ze śniegiem</item>
+        <item>Burza śnieżna</item>
+        <item>Śnieg</item>
+        <item>Zamieć śnieżna</item>
+        <item>Zawieja śnieżna</item>
+        <item>Przelotny śnieg</item>
+        <item>Burza piaskowa</item>
+        <item>Burza piaskowa</item>
+        <item>Pyliście</item>
+        <item>Wietrznie</item>
+        <item>Grad</item>
+        <item>Zadyma</item>
+        <item>Mgiełka</item>
+        <item>Mżawka</item>
+        <item>Brak danych</item>
+    </string-array>
+    <string-array name="weather_indexes_uv_level">
+        <item>Słaby</item>
+        <item>Słaby</item>
+        <item>Średni</item>
+        <item>Silny</item>
+        <item>Silny</item>
+    </string-array>
+    <string-array name="wind_direction">
+        <item>Wiatr PN</item>
+        <item>Wiatr PNW</item>
+        <item>Wiatr W</item>
+        <item>Wiatr PDW</item>
+        <item>Wiatr PD</item>
+        <item>Wiatr PDZ</item>
+        <item>Wiatr Z</item>
+        <item>Wiatr PNZ</item>
+    </string-array>
 </resources>

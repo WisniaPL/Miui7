@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Clock version="1" type="awesome" useVariableUpdater="DateTime.Minute" resDensity="480">
+  <Var name="hour" expression="ifelse(#time_format,#hour24,#hour12,#hour12,12)"/>
+  <Var name="flag" expression="eq(int(#hour/10),1)"/>
+  <Var name="color" type="string" expression="ifelse(#applied_light_wallpaper,'#73000000','#ccffffff')" />
+  <Group frameRate="30" >
+  <Var name="offset_x" expression="22+ifelse(#flag,-20,0)"/>
+  <Var name="cubic_ani" expression="ifelse(#cubic_flag,8*#cubic_factor*#cubic_factor*#cubic_factor,1-8*#cubic_factor*#cubic_factor*#cubic_factor)"/>
+  <Var name="cubic_factor">
+    <VariableAnimation>
+      <AniFrame value="0" time="100"/>
+      <AniFrame value="0.5" time="700"/>
+      <AniFrame value="0" time="700"/>
+      <AniFrame value="0.5" time="1600"/>
+    </VariableAnimation>
+  </Var>
+  <Var name="cubic_flag">
+    <VariableAnimation>
+      <AniFrame value="1" time="0"/>
+      <AniFrame value="1" time="700"/>
+      <AniFrame value="0" time="700"/>
+      <AniFrame value="0" time="1600"/>
+    </VariableAnimation>
+  </Var>
+  <Image name="dot" x="#offset_x+#hour_first.bmp_width+#hour_second.bmp_width" y="23" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/s_dot.png'" />
+  </Group>
+  <Image name="hour_first" x="#offset_x" y="23" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/l.png'" srcid="#hour/10"/>
+  <Image name="hour_second" x="#offset_x+#hour_first.bmp_width" y="23" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/l.png'" srcid="#hour%10"/>
+  <Image name="minute_first" x="#offset_x+#hour_first.bmp_width+#hour_second.bmp_width+#dot.bmp_width" y="23" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/s.png'" srcid="#minute/10"/>
+  <Image name="minute_second" x="#offset_x+#hour_first.bmp_width+#hour_second.bmp_width+#dot.bmp_width+#minute_first.bmp_width" y="23" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/s.png'" srcid="#minute%10"/>
+  <DateTime x="30" y="255" format="@date_time" size="46" color="@color"/>
+  <DateTime x="30" y="315" format="@date_time_day" size="46" color="@color"/>
+  <Button x="15" y="245" width="350" height="160">
+    <Triggers>
+      <Trigger action="up">
+        <IntentCommand action="android.intent.action.MAIN" package="com.android.calendar" class="com.android.calendar.AllInOneActivity"/>
+      </Trigger>
+    </Triggers>
+  </Button>
+  <Button name="clock_button" x="7" y="0" width="450" height="280"/>
+   <Button x="#view_width/2" y="0" width="#view_width/2" height="280">
+    <Triggers>
+      <Trigger action="up">
+        <IntentCommand action="android.intent.action.MAIN" package="com.miui.weather2" class="com.miui.weather2.ActivityWeatherMain"/>
+      </Trigger>
+    </Triggers>
+   </Button>
+  <Var name="weather_description" expression="eval('@weather_type_'+#weather_id)" type="string"/>
+  <VariableBinders>
+         <ContentProviderBinder
+            name="weather_provider"
+            uri="content://weather/weather"
+            columns="city_id,city_name,weather_type,forecast_type,aqilevel,wind,humidity,temperature,tmphighs,tmplows"
+            countName="hasweather" denpendency="selected_city">
+             <Variable name="weather_location_id" type="string" column="city_id"/>
+             <Variable name="weather_location" type="string" column="city_name"/>
+             <Variable name="weather_id" type="int" column="weather_type"/>
+             <Variable name="weather_forecast_id" type="int" column="forecast_type"/>
+             <Variable name="weather_aqilevel" type="int" column="aqilevel"/>
+             <Variable name="weather_temperature" type="int" column="temperature"/>
+             <Variable name="weather_temphigh" type="int" column="tmphighs"/>
+             <Variable name="weather_templow" type="int" column="tmplows"/>
+             <Variable name="weather_forecast_id1" type="int" column="forecast_type" row="1"/>
+             <Variable name="weather_temphigh1" type="int" column="tmphighs" row="1"/>
+             <Variable name="weather_templow1" type="int" column="tmplows" row="1"/>
+             <Variable name="weather_forecast_id2" type="int" column="forecast_type" row="2"/>
+             <Variable name="weather_temphigh2" type="int" column="tmphighs" row="2"/>
+             <Variable name="weather_templow2" type="int" column="tmplows" row="2"/>
+             <Variable name="weather_forecast_id3" type="int" column="forecast_type" row="3"/>
+             <Variable name="weather_temphigh3" type="int" column="tmphighs" row="3"/>
+             <Variable name="weather_templow3" type="int" column="tmplows" row="3"/>
+             <Variable name="weather_wind" type="string" column="wind" />
+             <Variable name="weather_humidity" type="string" column="humidity" />
+         </ContentProviderBinder>
+     <ContentProviderBinder
+            uri="content://weather/selected_city"
+            columns="flag"
+            whereFormat="posID='%s'" whereParas="@weather_location_id"
+            dependency="weather_provider">
+             <Variable name="is_location_city" type="int" column="flag"/>
+         </ContentProviderBinder>
+    </VariableBinders>
+  <Image srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/weather.png'" srcid="ifelse(gt(#weather_id,24)+lt(#weather_id,0),10000,#weather_id)" x="#view_width-30" y="23" align="right"/>
+  
+  <Text name="weather_current" format="%d°  %s" paras="#weather_temperature,@weather_location" x="#view_width-30"  y="255" bold="true" align="center" size="42" marqueeSpeed="30" w="320" color="@color" align="right"/>
+  <!--<Text name="weather_temperature" format="%d&#xb0;/%d&#xb0;" paras="#weather_temphigh,#weather_templow" x="#view_width-30"  y="315" align="center" size="46" color="@color" align="right"/>
+  -->
+  <Text name="weather_wind" format="%s" paras="@weather_wind" x="#view_width-30"  y="315" align="center" size="36" color="@color" align="right"/>
+  <Text name="weather_humidity" format="Wilgotność %s%%" paras="@weather_humidity" x="#view_width-30"  y="365" align="center" size="36" color="@color" align="right"/>
+
+
+  <!--<Text name="weather_temperature" textExp="#weather_temperature&#xb0;" x="#view_width-30"  y="315" align="center" size="46" color="@color" align="right"/>
+  -->
+
+  <!--<ImageNumber number="#weather_temperature" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/temp.png'" x="#view_width-58"  y="270" align="right"/>
+  <Image srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/temp_degree.png'" x="#view_width-30"  y="270" align="right"/>
+  -->
+</Clock>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+	<Group text="Zegar">
+		<NumberChoice text="Czcionka" summary="Zmiana czcionki będzie miała wpływ na tekst zegara." id="TimeStyle" default="2">
+			<Item text="Normalna" value="1"/>
+			<Item text="Pogrubiona" value="2"/>
+		</NumberChoice>
+	</Group>
+	<Group text="Pogoda">
+		<CheckBox text="Pokaż pogodę" id="weather_ifo" default="1"/>
+		<NumberChoice text="Styl ikon" id="weather_icon"  default="1">
+			<Item text="1" value="1" />
+			<Item text="2" value="2" />
+		</NumberChoice>
+	</Group>
+</Config>

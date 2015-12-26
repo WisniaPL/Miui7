@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+	<Group text="Clock">
+		<NumberChoice text="Font" summary="Font changes will take effect when the widget is updated on the screen." id="TimeStyle" default="2">
+			<Item text="Stock" value="1"/>
+			<Item text="Bold" value="2"/>
+		</NumberChoice>
+	</Group>
+	<Group text="Weather">
+		<CheckBox text="Show weather" id="weather_ifo" default="1"/>
+		<NumberChoice text="Icon style" id="weather_icon"  default="1">
+			<Item text="1" value="1" />
+			<Item text="2" value="2" />
+		</NumberChoice>
+	</Group>
+</Config>

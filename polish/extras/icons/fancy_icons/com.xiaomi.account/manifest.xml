@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Icon version="1" frameRate="0" width="136" height="136" resDensity="320" extraResourcesDensity="320,480,640" extraResources="sw1536-den320:den320:1.235" extraScaleByDensity="480:1.412,640:1.647" extraScales="sw1536-den320:1.235" useVariableUpdater="none">
+
+    <VariableBinders>
+         <ContentProviderBinder
+            uri="content://com.xiaomi.vip.provider/user" columns="level">
+             <Variable name="vip_level" type="int" column="level"/>
+         </ContentProviderBinder>
+    </VariableBinders>
+
+    <Image x="68" y="68" align="center" alignV="center" pivotX="68" pivotY="68" src="mi_vip_level.png" srcid="#vip_level"/>
+</Icon>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string name="date_time" value="M月d日"/>
+	<string name="date_time_day" value="E"/>
+	<string name="language" value="zh_CN"/>
+</strings>

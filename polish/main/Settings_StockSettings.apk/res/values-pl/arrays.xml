@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sdcard_entries">
+        <item>1-Wewnętrzna, 2-Zewnętrzna</item>
+        <item>1-Zewnętrzna, 2-Wewnętrzna</item>
+        <item>Tylko pamięć wewnętrzna</item>
+        <item>Tylko Karta SD</item>
+    </string-array>
+    <string-array name="sdcard_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="contacts_sorting_entries">
+        <item>Sortowanie według ustawień</item>
+        <item>Last First Middle name</item>
+        <item>Last, First Middle name</item>
+    </string-array>
+    <string-array name="contacts_sorting_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

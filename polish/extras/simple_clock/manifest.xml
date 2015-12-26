@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Clock version="1" type="awesome" useVariableUpdater="DateTime.Minute" update_interval="60000" screenWidth="720" extraResourcesScreenWidth="720,1080">
+	<Var name="hour" expression="ifelse(#time_format,#hour24,#hour12,#hour12,12)"/>
+	<Button x="500" y="#view_height/2-111"  w="194" h="222"  >
+		<Triggers>
+			<Trigger action="up">
+        	<IntentCommand action="android.intent.action.MAIN" package="com.miui.weather2" class="com.miui.weather2.ActivityWeatherMain"/>
+			</Trigger>
+		</Triggers>
+	</Button>
+	<Button name="clock_button" x="30" y="#view_height/2-111" w="450" h="222"/>
+	<VariableBinders>
+        <ContentProviderBinder 
+			name="weather_binder" 
+            uri="content://pro.burgerz.weather/weather" 
+            columns="station,temp,weatherType,weatherID,windSpeedMeters,windDirLocalized,tempLow,tempHigh,humidity,tempFeel,sunrizeHour,sunrizeMinute,sunsetHour,sunsetMinute"  
+            countName="hasWeatherbz">
+            <Variable name="weather_temp_bz" type="int" column="temp" row="0"/>
+			<Variable name="weather_city_bz" type="string" column="station" row="0"/>
+			<Variable name="weather_description_bz" type="string" column="weatherType" row="0"/>
+			<Variable name="weather_temperature_bz" type="string" column="temp" row="0"/>
+            <Variable name="weather_type_bz" type="int" column="weatherID" row="0"/>
+            <Variable name="weather_wind_bz" type="string" column="windSpeedMeters" row="0"/>
+            <Variable name="weather_dir_bz" type="string" column="windDirLocalized" row="0"/>
+            <Variable name="weather_Low_bz" type="string" column="tempLow" row="0"/>
+            <Variable name="weather_High_bz" type="string" column="tempHigh" row="0"/>
+            <Variable name="weather_humidity_bz" type="string" column="humidity" row="0"/>
+            <Variable name="weather_feel_bz" type="string" column="tempFeel" row="0"/>
+
+			<Variable name="sunrizeH_bz" type="int" column="sunrizeHour" row="0"/>
+			<Variable name="sunrizeM_bz" type="int" column="sunrizeMinute" row="0"/>
+			<Variable name="sunsetH_bz" type="int" column="sunsetHour" row="0"/>
+			<Variable name="sunsetM_bz" type="int" column="sunsetMinute" row="0"/>
+        </ContentProviderBinder>
+		<ContentProviderBinder uri="content://weather/weather" columns="city_name,publish_time,temperature,temperature_range,description,wind,humidity,sunrise,sunset,weather_type" 
+			countName="hasWeatherst">
+			<Variable name="weather_city_stock" type="string" column="city_name"/>
+			<Variable name="weather_temperature_stock" type="string" column="temperature"/>
+			<Variable name="weather_description_stock" type="string" column="description"/>
+			<Variable name="weather_wind_stock" type="string" column="wind"/>
+			<Variable name="weather_humidity_stock" type="string" column="humidity"/>
+			<Variable name="weather_type_stock" type="int" column="weather_type"/>
+			
+			<Variable name="sunriseMiui" type="long" column="sunrise"/>
+			<Variable name="sunsetMiui" type="long" column="sunset"/>
+		</ContentProviderBinder>
+    </VariableBinders>
+
+	<Var name="vis" expression="#hasWeatherbz+#hasWeatherst"/> 
+	<Var name="weather_ifo" expression="ifelse(isnull(#weather_ifo),1,#weather_ifo)" const="true"/>
+	<Var name="weather_id" expression="ifelse(#hasWeatherbz,#weather_type_bz,#weather_type_stock)"/> 
+	<Var name="TimeStyle" expression="ifelse(isnull(#TimeStyle),2,#TimeStyle)" type="number" const="true"/>
+	<Var name="weather_icon" expression="ifelse(isnull(#weather_icon),1,#weather_icon)" type="number" const="true"/>
+	<Var name="weather_city" type="string" expression="ifelse(#hasWeatherbz,@weather_city_bz,@weather_city_stock)"/> 
+	<Var name="weather_temperature" type="string" expression="ifelse(#hasWeatherbz,@weather_temperature_bz,@weather_temperature_stock)"/>
+	<Var name="weather_description" type="string" expression="ifelse(#hasWeatherbz,@weather_description_bz,@weather_description_stock)"/> 
+	<Var name="weather_humidity" type="string" expression="ifelse(#hasWeatherbz,@weather_humidity_bz,@weather_humidity_stock)"/>
+	<Var name="weather_dir" type="string" expression="ifelse(#hasWeatherbz,@weather_dir_bz,'')"/>
+	<Var name="temp_format" type="string" expression="ifelse(#hasWeatherbz,@temp_format_bz,@temp_format_miui)"/>
+ 	<Var name="weather_wind" type="string" expression="ifelse(#hasWeatherbz,@weather_wind_bz,ifelse(eqs(substr(@weather_wind_stock,2,2),'nd'),substr(@weather_wind_stock,6),@weather_wind_stock))"/>
+	<Var name="wind_format" type="string" expression="ifelse(#hasWeatherbz,@wind_format_bz,@wind_format_miui)"/>
+	<Var name="is_night" expression="ifelse(#hasWeatherst,0,gt(#time_sys,#sunsetMiui)+gt(#sunriseMiui,#time_sys))"/>
+	
+	<Group visibility="#vis*#weather_ifo" x="-30">
+		<Time x="402" y="#view_height/2-5" space="-2" align="right" alignV="bottom" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/clock/time_' + #TimeStyle +'.png'" visibility="#TimeStyle"/>
+		<Group visibility="not(#applied_light_wallpaper)">
+			<DateTime x="397" y="#view_height/2+10"   color="#000000" size="30" align="right" format="d MMMM yyyy" marqueeSpeed="30" w="450" alpha="25"/>
+			<DateTime x="397" y="#view_height/2+7"   color="#ffffff" size="30" align="right" format="d MMMM yyyy" marqueeSpeed="30" w="450" alpha="250"/>
+			
+			<DateTime x="397" y="#view_height/2+50"   color="#000000" size="30" align="right" format="EEEE" marqueeSpeed="30" w="450" alpha="25"/>
+			<DateTime x="397" y="#view_height/2+47"   color="#ffffff" size="30" align="right" format="EEEE" marqueeSpeed="30" w="450" alpha="250"/>
+			
+			<Text x="473" y="#view_height/2+10"  color="#000000" size="30" format="%s" paras="@weather_city"    alpha="25" marqueeSpeed="30" w="275"/>
+			<Text x="473" y="#view_height/2+7"  color="#ffffff" size="30" format="%s" paras="@weather_city"    alpha="250" marqueeSpeed="30" w="275"/>
+			
+			<Text x="473" y="#view_height/2+50"  color="#000000"   size="30" format="%s" paras="@weather_temperature"  marqueeSpeed="30" w="275" alpha="25"/>	
+			<Text x="473" y="#view_height/2+47"  color="#ffffff"   size="30" format="%s" paras="@weather_temperature"  marqueeSpeed="30" w="275"/>	
+		</Group>
+		<Group visibility="#applied_light_wallpaper">
+			<DateTime x="397" y="#view_height/2+7"   color="#000000" size="30" align="right" format="d MMMM yyyy" marqueeSpeed="30" w="450" alpha="153"/>
+			<DateTime x="397" y="#view_height/2+47"   color="#000000" size="30" align="right" format="EEEE" marqueeSpeed="30" w="450" alpha="153"/>
+			<Text x="473" y="#view_height/2+7"  color="#000000" size="30" format="%s" paras="@weather_city"    alpha="153" marqueeSpeed="30" w="275"/>
+			<Text x="473" y="#view_height/2+47"  color="#000000"   size="30" format="%s" paras="@weather_temperature" alpha="153" marqueeSpeed="30" w="275"/>	
+		</Group>
+		<Image x="438" y="#view_height/2-2" visibility="#applied_light_wallpaper" src="dark/sep.9.png" align="center" alignV="center"/>
+		<Image x="438" y="#view_height/2-2" visibility="not(#applied_light_wallpaper)" src="light/sep.9.png" align="center" alignV="center"/>
+		
+		<Group visibility="eq(#weather_icon,1)">
+			<Group visibility="#applied_light_wallpaper">
+				<Image src="dark/weather_1/clear.png" visibility="eq(#weather_id,0)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="dark/weather_1/cloud.png" visibility="eq(#weather_id,1)+eq(#weather_id,2)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="dark/weather_1/rain.png" visibility="eq(#weather_id,4)+eq(#weather_id,5)+eq(#weather_id,6)+eq(#weather_id,9)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/lightrain.png" visibility="eq(#weather_id,8)+eq(#weather_id,10)+eq(#weather_id,11)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/hailstone.png" visibility="eq(#weather_id,22)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/storm.png" visibility="eq(#weather_id,7)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/fog.png" visibility="eq(#weather_id,3)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/snowsmall.png" visibility="eq(#weather_id,14)+eq(#weather_id,16)+eq(#weather_id,17)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/snow.png" visibility="eq(#weather_id,13)+eq(#weather_id,15)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/hail.png" visibility="eq(#weather_id,18)+eq(#weather_id,19)+eq(#weather_id,20)+eq(#weather_id,21)+eq(#weather_id,23)+eq(#weather_id,24)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_1/rainsnow.png" visibility="eq(#weather_id,12)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+			</Group>
+			<Group visibility="not(#applied_light_wallpaper)">
+				<Image src="light/weather_1/clear.png" visibility="eq(#weather_id,0)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="light/weather_1/cloud.png" visibility="eq(#weather_id,1)+eq(#weather_id,2)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="light/weather_1/rain.png" visibility="eq(#weather_id,4)+eq(#weather_id,5)+eq(#weather_id,6)+eq(#weather_id,9)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/lightrain.png" visibility="eq(#weather_id,8)+eq(#weather_id,10)+eq(#weather_id,11)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/hailstone.png" visibility="eq(#weather_id,22)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/storm.png" visibility="eq(#weather_id,7)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/fog.png" visibility="eq(#weather_id,3)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/snowsmall.png" visibility="eq(#weather_id,14)+eq(#weather_id,16)+eq(#weather_id,17)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/snow.png" visibility="eq(#weather_id,13)+eq(#weather_id,15)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/hail.png" visibility="eq(#weather_id,18)+eq(#weather_id,19)+eq(#weather_id,20)+eq(#weather_id,21)+eq(#weather_id,23)+eq(#weather_id,24)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_1/rainsnow.png" visibility="eq(#weather_id,12)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+			</Group>
+		</Group>
+		<Group visibility="eq(#weather_icon,2)">
+			<Group visibility="#applied_light_wallpaper">
+				<Image src="dark/weather_2/clear.png" visibility="eq(#weather_id,0)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="dark/weather_2/cloud.png" visibility="eq(#weather_id,1)+eq(#weather_id,2)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="dark/weather_2/rain.png" visibility="eq(#weather_id,4)+eq(#weather_id,5)+eq(#weather_id,6)+eq(#weather_id,9)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/lightrain.png" visibility="eq(#weather_id,8)+eq(#weather_id,10)+eq(#weather_id,11)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/hailstone.png" visibility="eq(#weather_id,22)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/storm.png" visibility="eq(#weather_id,7)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/fog.png" visibility="eq(#weather_id,3)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/snowsmall.png" visibility="eq(#weather_id,14)+eq(#weather_id,16)+eq(#weather_id,17)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/snow.png" visibility="eq(#weather_id,13)+eq(#weather_id,15)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/hail.png" visibility="eq(#weather_id,18)+eq(#weather_id,19)+eq(#weather_id,20)+eq(#weather_id,21)+eq(#weather_id,23)+eq(#weather_id,24)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="dark/weather_2/rainsnow.png" visibility="eq(#weather_id,12)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+			</Group>
+			<Group visibility="not(#applied_light_wallpaper)">
+				<Image src="light/weather_2/clear.png" visibility="eq(#weather_id,0)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="light/weather_2/cloud.png" visibility="eq(#weather_id,1)+eq(#weather_id,2)" alpha="255" x="460" y="#view_height/2+14" srcid="#is_night" alignV="bottom"/>
+				<Image src="light/weather_2/rain.png" visibility="eq(#weather_id,4)+eq(#weather_id,5)+eq(#weather_id,6)+eq(#weather_id,9)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/lightrain.png" visibility="eq(#weather_id,8)+eq(#weather_id,10)+eq(#weather_id,11)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/hailstone.png" visibility="eq(#weather_id,22)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/storm.png" visibility="eq(#weather_id,7)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/fog.png" visibility="eq(#weather_id,3)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/snowsmall.png" visibility="eq(#weather_id,14)+eq(#weather_id,16)+eq(#weather_id,17)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/snow.png" visibility="eq(#weather_id,13)+eq(#weather_id,15)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/hail.png" visibility="eq(#weather_id,18)+eq(#weather_id,19)+eq(#weather_id,20)+eq(#weather_id,21)+eq(#weather_id,23)+eq(#weather_id,24)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+				<Image src="light/weather_2/rainsnow.png" visibility="eq(#weather_id,12)" alpha="255" x="460" y="#view_height/2+14" alignV="bottom"/>
+			</Group>
+		</Group>
+		
+	</Group>
+	<Group visibility="not(#vis*#weather_ifo)">
+		<Time x="#view_width/2" y="144" space="-2" align="center" alignV="center" srcExp="ifelse(#applied_light_wallpaper,'dark','light')+'/clock/time_' + #TimeStyle +'.png'" visibility="#TimeStyle"/>
+		<Group visibility="not(#applied_light_wallpaper)">
+			<DateTime x="#view_width/2+5" y="224+3"   color="#000000" size="30" align="center" alignV="center" format="d MMMM yyyy" alpha="25"/>
+			<DateTime x="#view_width/2+5" y="224"   color="#ffffff" size="30" align="center" alignV="center" format="d MMMM yyyy" alpha="250"/>
+			<DateTime x="#view_width/2+5" y="266+3"   color="#000000" size="30" align="center" alignV="center" format="EEEE" alpha="25"/>
+			<DateTime x="#view_width/2+5" y="266"   color="#ffffff" size="30" align="center" alignV="center" format="EEEE" alpha="250"/>
+		</Group>
+		<Group visibility="#applied_light_wallpaper">
+			<DateTime x="#view_width/2+5" y="224"   color="#000000" size="30" align="center" alignV="center" format="d MMMM yyyy" alpha="153"/>
+			<DateTime x="#view_width/2+5" y="266"   color="#000000" size="30" align="center" alignV="center" format="EEEE" alpha="153"/>
+		</Group>
+	</Group>
+	
+</Clock>
